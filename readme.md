@@ -6,6 +6,12 @@ The \_\_all\_\_ iterable is used to define what is imported when you use `from m
 
 > it is called "allstar" because \_\_all\_\_ is imported using an star ( * ) symbol
 
+# Installation
+
+```bash
+pip install allstar
+```
+
 # Usage
 
 ## Basic usage
