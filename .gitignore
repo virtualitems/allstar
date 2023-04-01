@@ -1,6 +1,9 @@
 # personal
 .ignore/
 
+# environment
+venv/
+
 # build
 dist/
 *.egg-info/
