@@ -139,7 +139,7 @@ class Star:
             TypeError: if the item is not a string or an object with a
                 __name__ attribute
 
-            NameError: if the item is not an attribute of the module
+            AttributeError: if the item is not an attribute of the module
         """
 
         if isinstance(item, str):
@@ -153,7 +153,7 @@ class Star:
                 'item must be a string or an object with a __name__ attribute')
 
         if not hasattr(self._module, name):
-            raise NameError(
+            raise AttributeError(
                 f'{item} is not an attribute of {self._module.__name__}')
 
         return name
@@ -237,7 +237,7 @@ class Star:
         if not callable(item):
             raise TypeError('item must be callable')
 
-        if not item.__module__ == self._module.__name__:
+        if not hasattr(self._module, item.__name__):
             raise AttributeError(
                 f'{item} is not an attribute of {self._module.__name__}')
 
