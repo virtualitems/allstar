@@ -1,1 +1,1 @@
-from allstar import Star
+from .star import Star
