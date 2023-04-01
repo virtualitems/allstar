@@ -7,3 +7,7 @@ venv/
 # build
 dist/
 *.egg-info/
+
+# bytecode
+*/__pycache__/*
+*.pyc
