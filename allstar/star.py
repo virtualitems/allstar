@@ -61,27 +61,23 @@ class Star:
         >>> from allstar import Stard
 
     Attributes:
-        _auto_commit: If True, the changes are automatically committed
         _exports: Current __all__ names list
         _module: Module reference
         _frozen_reference: Reference to the freeze function generated tuple
     """
 
-    def __init__(self, module_name: 'str', auto_commit: 'bool' = True):
+    def __init__(self, module_name: 'str'):
         """
         Args:
             module_name: Name of the module to manage
-            auto_commit: If True, the changes are automatically committed
 
         Raises:
             AssertionError: if the arguments are not of the correct type
             ModuleNotFoundError: if the module is not found in sys.modules
         """
         assert isinstance(module_name, str), 'module_name must be a string'
-        assert isinstance(auto_commit, bool), 'auto_commit must be a boolean'
 
         # set defaults
-        self._auto_commit = auto_commit
         self._exports = []
         self._frozen_reference = None
 
