@@ -9,7 +9,7 @@ import logging
 
 from builtins import *  # testing
 
-from star import Star
+from allstar import Star
 
 logging.basicConfig(level=logging.DEBUG)
 logging.captureWarnings(True)
