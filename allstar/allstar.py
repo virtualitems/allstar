@@ -63,7 +63,6 @@ class Star:
     Attributes:
         _auto_commit: If True, the changes are automatically committed
         _exports: Current __all__ names list
-        _new_exports: New __all__ names list to be committed
         _module: Module reference
         _frozen_reference: Reference to the freeze function generated tuple
     """
