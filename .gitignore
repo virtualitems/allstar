@@ -1,1 +1,6 @@
+# personal
 .ignore/
+
+# build
+dist/
+*.egg-info/
