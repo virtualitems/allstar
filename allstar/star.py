@@ -314,3 +314,8 @@ class Star:
         """
         self._exports.clear()
         self._module.__all__ = self._exports
+
+    def commit(self):
+        """Commit the changes to the __all__ list if it's necessary
+        """
+        self._check_reference()
