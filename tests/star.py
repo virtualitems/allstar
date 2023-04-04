@@ -90,12 +90,6 @@ class StarTest(unittest.TestCase):
         star.include_all(['list'])
         self.assertIn('list', __all__)
 
-    def test_merging(self):
-        """The commit method must merge the names added manually"""
-        __all__ = ['dict']
-        Star(__name__)
-        self.assertIn('dict', __all__)
-
     def test_commit(self):
         """The commit method must merge the names added manually"""
         star = Star(__name__)

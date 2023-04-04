@@ -63,7 +63,6 @@ class Star:
     Attributes:
         _exports: Current __all__ names list
         _module: Module reference
-        _frozen_reference: Reference to the freeze function generated tuple
     """
 
     def __init__(self, module_name: 'str'):
@@ -79,7 +78,6 @@ class Star:
 
         # set defaults
         self._exports = []
-        self._frozen_reference = None
 
         self._module = modules.get(module_name)
 
@@ -180,13 +178,7 @@ class Star:
         """Check if the __all__ reference is the manager's reference.
         If not, merge the data and set the manager's reference.
         """
-        if self._module.__all__ is self._frozen_reference:
-            # the data is already in _exports
-            self._module.__all__ = self._exports
-
-        elif self._module.__all__ is not self._exports:
-            # try to merge the found data
-            self._merge(self._module.__all__)
+        if self._module.__all__ is not self._exports:
             self._module.__all__ = self._exports
 
     def _merge(self, iterable: 'Iterable'):
@@ -299,8 +291,7 @@ class Star:
             >>> __all__
             ()
         """
-        self._frozen_reference = tuple(self._exports)
-        self._module.__all__ = self._frozen_reference
+        self._module.__all__ = tuple(self._exports)
 
     def empty(self):
         """Create an empty exports list
