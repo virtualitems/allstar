@@ -1,6 +1,6 @@
 # AllStar
 
-"Allstar" is a simple library for managing the the \_\_all\_\_ attribute in modules.
+"allstar" is a simple library for managing the the \_\_all\_\_ attribute in modules.
 
 The \_\_all\_\_ attribute is used to specify what is imported when using the `from module import *` syntax. This type of import is commonly used by project mapping tools like documentation generators. It is important to manage \_\_all\_\_ because, for example, you may not want to generate documentation for imported classes, only for the ones you have created.
 
